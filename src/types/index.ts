@@ -12,7 +12,6 @@ export interface MealType {
   strImageSource: string | null;
   strCreativeCommonsConfirmed: string | null;
   dateModified: string | null;
-  // Інгредієнти
   strIngredient1: string | null;
   strIngredient2: string | null;
   strIngredient3: string | null;
@@ -33,7 +32,6 @@ export interface MealType {
   strIngredient18: string | null;
   strIngredient19: string | null;
   strIngredient20: string | null;
-  // Міри
   strMeasure1: string | null;
   strMeasure2: string | null;
   strMeasure3: string | null;
@@ -54,6 +52,8 @@ export interface MealType {
   strMeasure18: string | null;
   strMeasure19: string | null;
   strMeasure20: string | null;
+  [key: `strIngredient${number}`]: string | null;
+  [key: `strMeasure${number}`]: string | null;
 }
 
 export interface CategoryType {

@@ -39,7 +39,7 @@ const Recipe = () => {
     );
   }
 
-  if (error) {
+  if (error || !recipe) {
     return (
       <Box display="flex" justifyContent="center" p={4}>
         <Typography color="error">Error loading recipe</Typography>

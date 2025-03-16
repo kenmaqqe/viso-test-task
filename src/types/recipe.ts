@@ -1,10 +1,11 @@
 export interface Recipe {
+  idMeal: string;
   strMeal: string;
-  strMealThumb: string;
   strCategory: string;
   strArea: string;
   strInstructions: string;
-  strTags?: string;
-  strYoutube?: string;
-  strSource?: string;
+  strMealThumb: string;
+  strTags: string | null;
+  strYoutube: string | null;
+  strSource: string | null;
 }

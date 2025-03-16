@@ -9,7 +9,8 @@ import {
   Button,
 } from "@mui/material";
 import { styled } from "@mui/material/styles";
-import { Recipe } from "../../types/recipe";
+import { MealType } from "../../types";
+import { useFavorites } from "../../context/FavoriteContext";
 
 const ScrollableWrapper = styled(Box)(() => ({
   flex: 1,
@@ -36,16 +37,34 @@ const StyledCard = styled(Card)(({ theme }) => ({
 }));
 
 interface ScrollableContentProps {
-  recipe: Recipe;
+  recipe: MealType;
   onBack: () => void;
 }
 
 const ScrollableContent = ({ recipe, onBack }: ScrollableContentProps) => {
+  const { favorites, addToFavorites, removeFromFavorites } = useFavorites();
+  const isFavorite = favorites.some((fav) => fav.idMeal === recipe.idMeal);
+
+  const handleFavoriteClick = () => {
+    if (isFavorite) {
+      removeFromFavorites(recipe.idMeal);
+    } else {
+      addToFavorites(recipe);
+    }
+  };
+
   return (
     <ScrollableWrapper>
-      <div>
+      <Box display="flex" alignItems="center" justifyContent="space-between">
         <Button onClick={onBack}>{`< Back`}</Button>
-      </div>
+        <Button
+          onClick={handleFavoriteClick}
+          color={isFavorite ? "error" : "primary"}
+          sx={{ minWidth: "auto", px: 2 }}
+        >
+          {isFavorite ? "❤️" : "🤍"}
+        </Button>
+      </Box>
       <StyledCard>
         <Grid container spacing={4}>
           <Grid item xs={12} md={6}>
