@@ -63,18 +63,6 @@ class RecipeServices {
     }
   }
 
-  async getRandomRecipe(): Promise<MealType | null> {
-    try {
-      const response = await this.axiosInstance.get<MealDBResponse>(
-        "/random.php"
-      );
-      return response.data.meals?.[0] || null;
-    } catch (error) {
-      console.error("Error fetching random recipe:", error);
-      return null;
-    }
-  }
-
   async getRecipesByCategory(category: string): Promise<MealType[]> {
     try {
       const response = await this.axiosInstance.get<MealDBResponse>(
