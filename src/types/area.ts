@@ -2,4 +2,4 @@ interface AreaType {
   strArea: string;
 }
 
-export default AreaType;
+export type { AreaType };

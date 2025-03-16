@@ -1,54 +1,84 @@
-# React + TypeScript + Vite
+# Test task
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a React-based application for browsing and managing your favorite recipes. The app allows users to view detailed information about recipes, add them to favorites, and see a list of ingredients.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Browse recipes by category and area.
+- View detailed information about each recipe.
+- Add or remove recipes from your favorites.
+- View a combined list of ingredients from your favorite recipes.
 
-## Expanding the ESLint configuration
+## Technologies Used
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- React
+- TypeScript
+- Material-UI
+- React Router
+- React Query
+- Axios
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## Getting Started
+
+### Prerequisites
+
+- Node.js and npm installed on your machine.
+
+### Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/kenmaqqe/viso-test-task.git
+   ```
+
+2. Navigate to the project directory:
+
+   ```bash
+   cd viso-test-task
+   ```
+
+3. Install the dependencies:
+
+   ```bash
+   yarn install
+   ```
+
+### Running the Application
+
+To start the development server, run:
+
+```bash
+yarn dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+The application will be available at `http://localhost:5173/`.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Building for Production
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+To create a production build, run:
+
+```bash
+yarn build
 ```
+
+The build will be output to the `build` directory.
+
+## Usage
+
+- Navigate through different categories and areas to explore recipes.
+- Click on a recipe card to view detailed information.
+- Use the favorite button on a recipe card to add or remove it from your favorites.
+- View your favorite recipes and their combined ingredients on the favorites page.
+
+## Contributing
+
+Contributions are welcome! Please fork the repository and submit a pull request for any improvements or bug fixes.
+
+## License
+
+This project is licensed under the MIT License.
+
+## Contact
+
+For any questions or feedback, please contact [dimetriytalibal@gmail.com].
