@@ -36,11 +36,10 @@ const Main = () => {
   } = useQuery<MealType[]>({
     queryKey: ["recipes"],
     queryFn: () => recipeService.getRecipe(),
-    staleTime: 5 * 60 * 1000, // Cache for 5 minutes
-    gcTime: 30 * 60 * 1000, // Keep in cache for 30 minutes
+    staleTime: 5 * 60 * 1000,
+    gcTime: 30 * 60 * 1000,
   });
 
-  // Reset page when filters or screen size changes
   useEffect(() => {
     setPage(1);
   }, [filters, isMobile]);

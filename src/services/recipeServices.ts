@@ -19,7 +19,6 @@ class RecipeServices {
     baseURL: this.baseUrl,
   });
 
-  // Отримати всі рецепти (пошук за пустим рядком)
   async getRecipe(): Promise<MealType[]> {
     try {
       const alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
@@ -40,7 +39,6 @@ class RecipeServices {
     }
   }
 
-  // Пошук рецептів за назвою
   async searchByName(query: string): Promise<MealType[]> {
     try {
       const response = await this.axiosInstance.get<MealDBResponse>(
@@ -53,7 +51,6 @@ class RecipeServices {
     }
   }
 
-  // Отримати рецепт за ID
   async getRecipeById(id: string): Promise<MealType | null> {
     try {
       const response = await this.axiosInstance.get<MealDBResponse>(
@@ -66,7 +63,6 @@ class RecipeServices {
     }
   }
 
-  // Отримати випадковий рецепт
   async getRandomRecipe(): Promise<MealType | null> {
     try {
       const response = await this.axiosInstance.get<MealDBResponse>(
@@ -79,7 +75,6 @@ class RecipeServices {
     }
   }
 
-  // Отримати рецепти за категорією
   async getRecipesByCategory(category: string): Promise<MealType[]> {
     try {
       const response = await this.axiosInstance.get<MealDBResponse>(
@@ -92,7 +87,6 @@ class RecipeServices {
     }
   }
 
-  // Отримати рецепти за регіоном/країною
   async getRecipesByArea(area: string): Promise<MealType[]> {
     try {
       const response = await this.axiosInstance.get<MealDBResponse>(
@@ -105,7 +99,6 @@ class RecipeServices {
     }
   }
 
-  // Отримати рецепти за першою літерою
   async getRecipesByFirstLetter(letter: string): Promise<MealType[]> {
     try {
       const response = await this.axiosInstance.get<MealDBResponse>(
@@ -118,7 +111,6 @@ class RecipeServices {
     }
   }
 
-  // Отримати всі категорії
   async getCategories(): Promise<string[]> {
     try {
       const response = await this.axiosInstance.get<CategoryDBResponse>(
@@ -131,7 +123,6 @@ class RecipeServices {
     }
   }
 
-  // Отримати всі регіони/країни
   async getAreas(): Promise<string[]> {
     try {
       const response = await this.axiosInstance.get<AreaDBResponse>(
@@ -145,5 +136,4 @@ class RecipeServices {
   }
 }
 
-// Експортуємо єдиний екземпляр класу
 export default new RecipeServices();
