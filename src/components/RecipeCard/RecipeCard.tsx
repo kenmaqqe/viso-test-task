@@ -1,14 +1,16 @@
 import { MealType } from "../../types";
 import { Button } from "@mui/material";
 import styles from "./RecipeCard.module.css";
+import { useNavigate } from "react-router-dom";
 
 interface RecipeCardProps {
   recipe: MealType;
 }
 
 const RecipeCard = ({ recipe }: RecipeCardProps) => {
+  const navigate = useNavigate();
   const handleRecipeClick = () => {
-    console.log("Recipe details:", recipe);
+    navigate(`/recipe/${recipe.idMeal}`);
   };
 
   return (
@@ -27,7 +29,7 @@ const RecipeCard = ({ recipe }: RecipeCardProps) => {
         <Button size="small" variant="contained">
           Add to favorite
         </Button>
-        <Button size="small" variant="contained">
+        <Button size="small" variant="contained" onClick={handleRecipeClick}>
           Read more
         </Button>
       </div>
