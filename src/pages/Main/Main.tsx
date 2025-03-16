@@ -7,10 +7,12 @@ import {
   useMediaQuery,
   Typography,
   Box,
+  Button,
 } from "@mui/material";
 import { RecipeCard, Filter } from "../../components";
 import { MealType } from "../../types";
 import styles from "./Main.module.css";
+import { addFavoriteRecipe } from "../../store/favoriteRecipe";
 
 const ITEMS_PER_PAGE = 15;
 
@@ -21,6 +23,7 @@ interface Filters {
 }
 
 const Main = () => {
+  const [count, setCount] = useState(0);
   const [page, setPage] = useState(1);
   const [filters, setFilters] = useState<Filters>({
     search: "",
@@ -28,6 +31,14 @@ const Main = () => {
     area: "",
   });
   const isMobile = useMediaQuery("(max-width:600px)");
+
+  const favoriteRecipes = JSON.parse(
+    localStorage.getItem("favoriteRecipes") || "[]"
+  );
+
+  useEffect(() => {
+    setCount(favoriteRecipes.length);
+  }, [favoriteRecipes]);
 
   const {
     data: recipes = [] as MealType[],

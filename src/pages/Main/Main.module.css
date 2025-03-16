@@ -4,6 +4,13 @@
   padding: 20px;
 }
 
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
 .recipesGrid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
