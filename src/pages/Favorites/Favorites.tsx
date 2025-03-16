@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import {
   Container,
   Typography,
@@ -7,7 +7,7 @@ import {
   IconButton,
   Grid,
 } from "@mui/material";
-import { useFavorites } from "../../context/FavoriteContext";
+import { useFavorites } from "../../context";
 import { MealType } from "../../types";
 
 const Favorites = () => {

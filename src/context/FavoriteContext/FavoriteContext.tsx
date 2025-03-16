@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState } from "react";
-import { MealType } from "../types";
+import { MealType } from "../../types";
 
 interface FavoriteContextType {
   favorites: MealType[];

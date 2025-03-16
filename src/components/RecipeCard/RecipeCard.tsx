@@ -9,7 +9,7 @@ import {
 } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { MealType } from "../../types";
-import { useFavorites } from "../../context/FavoriteContext";
+import { useFavorites } from "../../context/FavoriteContext/FavoriteContext";
 
 interface RecipeCardProps {
   recipe: MealType;

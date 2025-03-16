@@ -1,9 +1,9 @@
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import { Main, Recipe, Favorites } from "./pages";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { FavoriteProvider } from "./context/FavoriteContext";
+import { FavoriteProvider } from "./context";
 import { AppBar, Toolbar, Typography, Badge } from "@mui/material";
-import { useFavorites } from "./context/FavoriteContext";
+import { useFavorites } from "./context";
 import "./App.css";
 
 const queryClient = new QueryClient({

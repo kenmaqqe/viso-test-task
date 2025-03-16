@@ -1,4 +1,4 @@
-export interface Recipe {
+interface Recipe {
   idMeal: string;
   strMeal: string;
   strCategory: string;
@@ -9,3 +9,5 @@ export interface Recipe {
   strYoutube: string | null;
   strSource: string | null;
 }
+
+export type { Recipe };

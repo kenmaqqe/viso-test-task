@@ -10,7 +10,7 @@ import {
 } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { MealType } from "../../types";
-import { useFavorites } from "../../context/FavoriteContext";
+import { useFavorites } from "../../context/FavoriteContext/FavoriteContext";
 
 const ScrollableWrapper = styled(Box)(() => ({
   flex: 1,
