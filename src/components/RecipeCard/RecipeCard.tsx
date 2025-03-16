@@ -73,11 +73,19 @@ const RecipeCard = ({ recipe }: RecipeCardProps) => {
               isRecipeFavorite ? "Remove from favorites" : "Add to favorites"
             }
           >
-            <img
-              src="https://www.svgrepo.com/show/16311/favorite.svg"
-              alt="favorite-icon"
-              style={{ width: "24px", height: "24px" }}
-            />
+            {isRecipeFavorite ? (
+              <img
+                src="https://www.svgrepo.com/show/41271/starfish.svg"
+                alt="favorite-icon"
+                style={{ width: "24px", height: "24px" }}
+              />
+            ) : (
+              <img
+                src="https://www.svgrepo.com/show/16311/favorite.svg"
+                alt="favorite-icon"
+                style={{ width: "24px", height: "24px" }}
+              />
+            )}
           </IconButton>
         </Box>
         <CardContent sx={{ flexGrow: 1 }}>
